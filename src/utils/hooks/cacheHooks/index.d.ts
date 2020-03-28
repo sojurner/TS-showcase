@@ -1,7 +1,14 @@
-import { ISwapiCache } from '../../../typings/swapi/index.d';
+import {
+  ISwapiCache,
+  IRickMortyCache,
+  IPokemonCache
+} from '~typings/cache/index.d';
 
 export interface ICache {
   swapi: ISwapiCache;
+  rickMorty: IRickMortyCache;
+  pokemon: IPokemonCache;
+  [key: keyof ICache]: ISwapiCache | IRickMortyCache;
 }
 
 export interface ICacheContext {
@@ -12,7 +19,10 @@ export interface ICacheContext {
 export type UseCacheContext = () => ICacheContext;
 
 export type UpdateCache = (
-  resourceKey: keyof ICache,
-  dataKey: keyof ISwapiCache,
-  value: any[]
+  dataCache: [
+    keyof ICache,
+    keyof ISwapiCache | keyof IRickMortyCache | keyof IPokemonCache,
+    any[]
+  ],
+  pageInfo?: [number[], number]
 ) => void;

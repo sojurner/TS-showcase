@@ -6,7 +6,10 @@ export type PrevPage = NoParamVoidable;
 export type GoToPage = ParamVoidable<number>;
 export type SetPageRange = React.Dispatch<React.SetStateAction<number[]>>;
 
-type UsePagination = () => IUsePaginationProps;
+type UsePagination = (
+  pageRange: number[],
+  currentPage: number
+) => IUsePaginationProps;
 
 export interface IUsePaginationProps extends IPaginationProps {
   setPageRange: SetPageRange;
