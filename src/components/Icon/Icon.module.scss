@@ -1,0 +1,7 @@
+.icon-base {
+  display: block;
+}
+
+.icon-link {
+  @extend .icon-base;
+}

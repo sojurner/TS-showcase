@@ -1,0 +1,50 @@
+.pagination-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0;
+  button {
+    border: 0;
+    background: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &:disabled {
+      color: rgb(78, 78, 78);
+    }
+  }
+}
+
+.pagination-swapi {
+  @extend .pagination-base;
+  font-weight: 100;
+
+  button,
+  span {
+    color: white;
+  }
+}
+
+.pagination-rickmorty {
+  @extend .pagination-base;
+  z-index: 2;
+  font-family: 'HelveticaNeue-CondensedBold', 'Helvetica Neue';
+}
+
+.pagination-page {
+  cursor: pointer;
+  color: rgb(153, 153, 153);
+  margin: 0 10px;
+  font-size: 1.2em;
+  width: 15px;
+  text-align: center;
+  transition: 0.1s linear;
+  &-active,
+  &:hover {
+    font-weight: bold;
+    text-decoration-line: underline;
+    @extend .pagination-page;
+  }
+}

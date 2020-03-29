@@ -1,0 +1,20 @@
+.pokemonheader {
+  &-container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &-bg {
+    background-blend-mode: multiply;
+    background-color: white;
+    position: absolute;
+    height: 130%;
+    width: 90%;
+    z-index: -1;
+    border-radius: 110px;
+    opacity: 0.15;
+    top: -15%;
+    left: 15%;
+  }
+}

@@ -1,0 +1,122 @@
+@import '~styles/_variables.scss';
+$character-header-bg: map-get($rick-morty-palette, green-secondary);
+
+.figure-base {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.figure-character-card {
+  @extend .figure-base;
+  width: 20em;
+  height: 20em;
+}
+
+.figure-figcaption-base {
+  position: relative;
+  background: $character-header-bg;
+  transition: transform 0.5s ease-in-out;
+
+  &::after,
+  &::before {
+    transition-delay: 0.2s;
+  }
+  section {
+    position: absolute;
+    padding: 5%;
+
+    width: 80%;
+    height: 490%;
+    opacity: 0;
+    left: 50%;
+    margin: 0 0 0 -45%;
+    transition: opacity 0.5s linear;
+    transition-delay: 0.2s;
+  }
+}
+
+.figure-figcaption {
+  width: 100%;
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    border: 8px solid;
+    top: -16px;
+  }
+  &::after {
+    left: 0;
+    border-top-color: transparent;
+    border-right-color: darken($character-header-bg, 20%);
+    border-bottom-color: darken($character-header-bg, 20%);
+    border-left-color: transparent;
+  }
+
+  &::before {
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: darken($character-header-bg, 20%);
+    border-bottom-color: darken($character-header-bg, 20%);
+    border-right-color: transparent;
+  }
+}
+
+.figure-figcaption-active {
+  position: relative;
+  background: $character-header-bg;
+  width: 100%;
+  transform: translate(0, -18em);
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    border: 8px solid;
+    top: 100%;
+  }
+
+  &::after {
+    left: 0;
+    border-left-color: transparent;
+    border-top-color: darken($character-header-bg, 25%);
+    border-right-color: darken($character-header-bg, 25%);
+    border-bottom-color: transparent;
+  }
+
+  &::before {
+    right: 0;
+
+    border-bottom-color: transparent;
+    border-left-color: darken($character-header-bg, 25%);
+    border-top-color: darken($character-header-bg, 25%);
+    border-right-color: transparent;
+  }
+  section {
+    opacity: 1;
+    background-image: linear-gradient(
+      to top,
+      hsla(0, 0%, 0%, 0) 0%,
+      hsla(0, 0%, 0%, 0.009) 11.7%,
+      hsla(0, 0%, 0%, 0.08) 22.1%,
+      hsla(0, 0%, 0%, 0.17) 25.1%,
+      hsla(0, 0%, 0%, 0.25) 31.2%,
+      hsla(0, 0%, 0%, 0.3) 39.4%,
+      hsla(0, 0%, 0%, 0.35) 46.6%,
+      hsla(0, 0%, 0%, 0.4) 53.1%,
+      hsla(0, 0%, 0%, 0.5) 58.9%,
+      hsla(0, 0%, 0%, 0.64) 64.3%,
+      hsla(0, 0%, 0%, 0.64) 69.3%,
+      hsla(0, 0%, 0%, 0.64) 74.1%,
+      hsla(0, 0%, 0%, 0.707) 78.8%,
+      hsla(0, 0%, 0%, 0.768) 83.6%,
+      hsla(0, 0%, 0%, 0.821) 88.7%,
+      hsla(0, 0%, 0%, 0.862) 94.1%,
+      hsla(0, 0%, 0%, 0.89) 100%
+    );
+  }
+}
