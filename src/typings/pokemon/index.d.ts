@@ -32,6 +32,7 @@ export interface IPokemon
   > {
   img: string;
   evolutions?: IBasePokemonInfo[] | null;
+  color?: IBasePokemonInfo;
 }
 
 export interface IPokemonSpecies {
@@ -55,6 +56,15 @@ export interface IPokemonEvolutionDetails {
   species: IBasePokemonInfo;
   is_baby: boolean;
 }
+
+export interface IPokemonTreeDetails {
+  evolutions: IBasePokemonInfo[];
+  color: IBasePokemonInfo;
+}
+
+export type TGetPokemonEvo = (
+  id: number
+) => Promise<IPokemonTreeDetails | Error>;
 
 export interface IPokemonResource<T> {
   pokemon: T;
