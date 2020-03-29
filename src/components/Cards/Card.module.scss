@@ -1,0 +1,136 @@
+@import '~styles/_variables.scss';
+
+.card-base {
+  font-family: Azonix;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  align-items: flex-start;
+  border-radius: 10px;
+}
+
+.card-base-resource {
+  font-family: Azonix;
+  display: flex;
+  padding: 1em;
+  align-items: flex-start;
+  border-radius: 10px;
+  width: 50vw;
+}
+.card-base-swapi {
+  box-shadow: 0px 0px 40px 20px rgba(78, 78, 78, 0.295);
+  background: rgba(48, 48, 48, 0.377);
+}
+
+.card-base-rickMorty {
+  height: max-content;
+}
+
+.card-planet {
+  @extend .card-base;
+  @extend .card-base-swapi;
+}
+
+.card-planet-resource {
+  @extend .card-base-resource;
+  @extend .card-base-swapi;
+}
+
+.card-people {
+  @extend .card-base;
+  @extend .card-base-swapi;
+}
+
+.card-people-resource {
+  @extend .card-base-resource;
+  @extend .card-base-swapi;
+}
+
+.card-film {
+  @extend .card-base;
+  @extend .card-base-swapi;
+}
+
+.card-film-resource {
+  @extend .card-base-resource;
+  @extend .card-base-swapi;
+}
+
+.card-species {
+  @extend .card-base;
+  @extend .card-base-swapi;
+}
+
+.card-species-resource {
+  @extend .card-base-resource;
+  @extend .card-base-swapi;
+}
+
+.card-vehicle {
+  @extend .card-base;
+  @extend .card-base-swapi;
+}
+
+.card-vehicle-resource {
+  @extend .card-base-resource;
+  @extend .card-base-swapi;
+}
+
+.card-starship {
+  @extend .card-base;
+  @extend .card-base-swapi;
+}
+
+.card-starship-resource {
+  @extend .card-base-resource;
+  @extend .card-base-swapi;
+}
+
+$character-icon-bg: map-get($rick-morty-palette, green-bg);
+.card-character {
+  @extend .card-base-rickMorty;
+  margin: 20px 0;
+  position: relative;
+
+  span {
+    padding: 0.4em;
+    position: absolute;
+    top: 2%;
+    right: 9%;
+    z-index: 1;
+    background: rgb(47, 52, 54);
+    border: 5px solid $character-icon-bg;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  svg {
+    fill: darken($character-icon-bg, 30%);
+  }
+
+  img {
+    width: 90%;
+    border: 1px solid map-get($rick-morty-palette, green-primary);
+    min-height: 10em;
+  }
+}
+
+.card-episodes {
+  @extend .card-base-rickMorty;
+  margin: 20px 0;
+  position: relative;
+  height: max-content;
+  overflow: hidden;
+  width: 90%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-location {
+  @extend .card-base-rickMorty;
+  margin: 20px 0;
+  position: relative;
+  height: max-content;
+  overflow: hidden;
+  width: 90%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}

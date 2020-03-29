@@ -1,8 +1,13 @@
 import React from 'react';
-import { RootNavigation } from '~components/Navigation';
+import { HomeContentNavigation } from '~components/Navigation';
+import Box from '~templates/Box';
 
 const HomePage: React.FC = () => {
-  return <RootNavigation />;
+  return (
+    <Box gridArea="content">
+      <HomeContentNavigation />
+    </Box>
+  );
 };
 
 export default HomePage;

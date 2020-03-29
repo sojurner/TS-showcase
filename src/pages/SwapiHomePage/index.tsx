@@ -1,12 +1,28 @@
 import React from 'react';
-import { SwapiNavigation } from '~components/Navigation';
-import { SwapiRouter } from '~components/Router';
 
-const SwapiHomePage = () => {
+import { SwapiHomeNavigation } from '~components/Navigation';
+import { useQuoteRequest } from '~utils/hooks/swapiHooks';
+import { TypographySwapiQuoteContent } from '~components/Typography';
+import Flex from '~templates/Flex';
+
+const SwapiHomePage: React.FC = () => {
+  const [quote, loading, error] = useQuoteRequest();
   return (
     <>
-      <SwapiRouter />
-      <SwapiNavigation />;
+      <Flex
+        margin="auto"
+        justifyContent="center"
+        flex="0 1 400px"
+        width="86%"
+        padding="2em"
+        flexDirection="column"
+        position="relative"
+      >
+        <SwapiHomeNavigation />
+        {quote && (
+          <TypographySwapiQuoteContent>{quote}</TypographySwapiQuoteContent>
+        )}
+      </Flex>
     </>
   );
 };

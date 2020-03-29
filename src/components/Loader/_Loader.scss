@@ -1,0 +1,22 @@
+@import '~styles/_animations.scss';
+
+.loader_wrapper {
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(0 0 1px yellow);
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  animation: _flip 2s linear infinite;
+}
+
+.loader path {
+  stroke: black;
+  stroke-width: 30;
+  fill: transparent;
+
+  stroke-dasharray: 100px 5px;
+  animation: _spin 1s ease-in-out infinite alternate;
+}

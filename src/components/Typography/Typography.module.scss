@@ -1,0 +1,188 @@
+// =================== Base =================== //
+
+.typography-base {
+  margin: 0;
+  padding: 0;
+  text-align: start;
+  font-weight: 100;
+}
+
+.typography-base-title {
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.typography-base-property {
+  letter-spacing: 3px;
+  color: rgb(156, 156, 156);
+}
+
+.typography-base-value {
+  color: white;
+  text-shadow: 0px 0px 15px rgb(255, 255, 255);
+}
+
+.typography-base-font-azonix {
+  font-family: Azonix;
+}
+
+.typography-base-font-equinox {
+  font-family: Equinox;
+}
+
+.typography-base-font-palatino {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+.typography-base-font-helvetica {
+  font-family: 'HelveticaNeue-CondensedBold', 'Helvetica Neue';
+}
+
+.typography-base-font-pokemon {
+  font-family: Pokemon;
+}
+// =================== Classes =================== //
+
+.typograghy-app-header {
+  @extend .typography-base-title;
+  @extend .typography-base-font-palatino;
+}
+
+.typography-swapi-page-title {
+  @extend .typography-base;
+  @extend .typography-base-title;
+
+  @extend .typography-base-font-equinox;
+}
+
+.typography-swapi-card-title {
+  @extend .typography-base;
+  @extend .typography-base-title;
+  @extend .typography-base-font-equinox;
+}
+
+.typography-swapi-card-property {
+  @extend .typography-base;
+  @extend .typography-base-property;
+  @extend .typography-base-font-azonix;
+
+  text-decoration-line: underline;
+}
+
+.typography-swapi-card-value {
+  @extend .typography-base;
+  @extend .typography-base-value;
+  @extend .typography-base-font-azonix;
+}
+
+.typography-swapi-resource-title {
+  @extend .typography-base;
+  @extend .typography-base-title;
+  @extend .typography-base-font-equinox;
+  position: sticky;
+  top: 0;
+  background: black;
+  font-size: 35px;
+}
+
+.typography-swapi-resource-property {
+  @extend .typography-base;
+  @extend .typography-base-property;
+  @extend .typography-base-font-azonix;
+}
+
+.typography-swapi-resource-value {
+  @extend .typography-base;
+  @extend .typography-base-value;
+  @extend .typography-base-font-azonix;
+
+  max-width: 350px;
+  font-size: 1.5em;
+}
+
+.typography-swapi-quote {
+  @extend .typography-base;
+  @extend .typography-base-font-azonix;
+
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  top: 0;
+  margin: 0 0 0 -40%;
+  font-size: 1.4em;
+  font-family: Neoteric;
+  text-align: center;
+}
+
+.typography-rickmorty-page-title {
+  @extend .typography-base;
+  @extend .typography-base-title;
+
+  @extend .typography-base-font-helvetica;
+}
+
+.typography-rickmorty-card-title {
+  @extend .typography-base;
+  @extend .typography-base-font-helvetica;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 10em;
+  padding-left: 5px;
+  letter-spacing: 1px;
+}
+
+.typography-rickmorty-card-subtitle {
+  @extend .typography-base;
+  @extend .typography-base-font-helvetica;
+  padding-left: 5px;
+  letter-spacing: 1px;
+  color: rgb(116, 116, 116);
+}
+
+.typography-rickmorty-card-property {
+  @extend .typography-base;
+  @extend .typography-base-font-helvetica;
+  text-decoration-line: underline;
+  letter-spacing: 1px;
+  color: rgb(126, 126, 126);
+  font-size: 1em;
+}
+
+.typography-rickmorty-card-value {
+  @extend .typography-base;
+  @extend .typography-base-font-helvetica;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 10px 30px white;
+  font-size: 1.3em;
+}
+
+.typography-pokemon-title {
+  @extend .typography-base-font-pokemon;
+}
+
+.typography-pokemon-selected {
+  @extend .typography-base;
+  &-header {
+    @extend .typography-pokemon-selected;
+    @extend .typography-base-font-helvetica;
+    font-size: 1em;
+    color: rgb(146, 146, 146);
+  }
+
+  &-details {
+    @extend .typography-pokemon-selected;
+    @extend .typography-base-font-pokemon;
+    font-size: 1.2em;
+    color: rgb(153, 151, 167);
+  }
+}
+
+.typography-pokemon-card-title {
+  @extend .typography-base;
+  @extend .typography-base-font-pokemon;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
